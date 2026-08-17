@@ -1,0 +1,63 @@
+![n8n](https://img.shields.io/badge/n8n-FF6D5A?style=for-the-badge&logo=n8n&logoColor=white)
+![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+
+<div align="center">
+
+# 🤖 Agente IA Autônomo para Telegram (n8n)
+
+*Automação inteligente e autônoma para atendimento e respostas no Telegram.*
+
+![n8n](https://img.shields.io/badge/n8n-FF6D5A?style=for-the-badge&logo=n8n&logoColor=white)
+![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
+
+---
+
+</div>
+
+## 📌 Sobre o Projeto
+
+Este projeto utiliza o fluxo de trabalho do **n8n** para capturar mensagens recebidas via Telegram, processar o conteúdo utilizando um modelo de Inteligência Artificial e devolver respostas estruturadas em tempo real.
+
+> [!NOTE]  
+> Este fluxo foi projetado para rodar de forma autônoma assim que ativado no n8n.
+
+---
+
+## 🛠️ Credenciais Necessárias
+
+| Credencial | Origem | Finalidade |
+| :--- | :--- | :--- |
+| `Telegram API` | `@BotFather` | Receber e enviar mensagens |
+| `OpenAI / Gemini API` | Provider da IA | Processamento de linguagem natural |
+
+---
+
+## 🚀 Como Importar e Usar
+
+1. Faça o download do arquivo `workflow.json` deste repositório.
+2. No seu n8n, vá em **File > Import from File** e selecione o arquivo baixado.
+3. Configure suas credenciais de API.
+4. Mude o status do fluxo para **Active**.
+
+---
+
+<details>
+<summary><b>🔍 Clique aqui para ver um exemplo do Payload JSON de entrada</b></summary>
+
+```json
+{
+  "update_id": 123456789,
+  "message": {
+    "message_id": 1,
+    "from": {
+      "first_name": "Usuário"
+    },
+    "chat": {
+      "id": 987654321,
+      "type": "private"
+    },
+    "text": "Olá, como funciona o agente?"
+  }
+}
